@@ -81,9 +81,15 @@ button:active{
     background-color: rgba(34, 34, 34, 0.555);
 }
 p{
-    visibility:visible;
+    visibility: hidden;
     text-decoration:underline;
     margin: 1%;
     font-family: sans-serif;
     font-size: larger;
+}
+.hidden{
+    visibility: hidden;
+}
+.shown{
+    visibility: visible;
 }
