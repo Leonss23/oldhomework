@@ -2,6 +2,8 @@
     background-color: rgba(0, 0, 0, 0.842);
     height: 70%;
     width: 35%;
+    min-height: 340px;
+    min-width: 340px;
     font-size: 1em;
     font-family: sans-serif;
     font-weight: bold;
@@ -16,7 +18,7 @@
     border-radius: 25px;
 }
 img{
-    margin: 8% 0  0;
+    margin: 5% 0  0;
     padding: 2%;
     border-radius: 50%;
     background-color: rgba(163, 163, 163, 0.8);
@@ -56,17 +58,19 @@ input:focus{
     background-color: rgba(255, 0, 0, 0.452);
 }
 button{
-    margin: 3% auto auto auto;
-    min-height: 65px;
+    margin: 2% auto 1% auto;
     height: 10%;
+    min-height: 40px;
     width: 25%;
     color: white;
-    font-size:large;
+    font-size:1em;
     font-weight:bold;
     border-radius: 15px;
     border: 2px solid rgba(255, 0, 0, 0.493);
     background-color: rgb(51, 0, 0);
     transition: 0.1s;
+    vertical-align: middle;
+    justify-content: space-between;
 }
 button:hover{
     border: 3px solid rgb(255, 0, 0);
@@ -77,7 +81,7 @@ button:active{
     background-color: rgba(34, 34, 34, 0.555);
 }
 p{
-    visibility: hidden;
+    visibility:visible;
     text-decoration:underline;
     margin: 1%;
     font-family: sans-serif;

@@ -24,11 +24,21 @@ function login() {
                     console.log('User exists');
                     if (pwdcorrect == 1) {
                         console.log('Password correct\nLogged in.');
-                    } else console.log('Password incorrect');
-                } else console.log("User doesn't exist");
+                        document.getElementById("Message").innerHTML = "Logged in.";
+                    } else {
+                        console.log('Password incorrect');
+                        document.getElementById("Message").innerHTML = "Credentials are incorrect.";
+                    }
+                } else {
+                    document.getElementById("Message").innerHTML = "Credentials are incorrect.";
+                    console.log("User doesn't exist.");
+                }
             }
         });
-    } else console.log('Credentials are too short. (4 or more characters required.)');
+    } else {
+        console.log('Credentials are too short. (4 or more characters required.)');
+        document.getElementById("Message").innerHTML = "Credentials are too short. (4 or more characters required.)";
+    }
     console.log('\n\n\n\n');
 }
 
@@ -43,16 +53,21 @@ function addUser() {
             if (newusr == v) {
                 newusrexists = 1;
                 console.log("User can't be added, as it already exists.")
+                document.getElementById("Message").innerHTML = "User already exists.";
             }
             if (count == BDusr.length) {
                 if (newusrexists == 0) {
                     BDusr.push(newusr);
                     BDpwd.push(newpwd);
                     console.log('User added: ' + BDusr[BDusr.length - 1] + '    Password: ' + BDpwd[BDpwd.length - 1]);
+                    document.getElementById("Message").innerHTML = "User added.";
                 }
             }
         });
-    } else console.log('Credentials are too short. (4 or more characters required.)');
+    } else {
+        console.log('Credentials are too short. (4 or more characters required.)');
+        document.getElementById("Message").innerHTML = "Credentials are too short. (4 or more characters required.)";
+    }
     console.log('\n\n\n\n');
 }
 
@@ -73,9 +88,16 @@ function resetPwd() {
                 if (usrexists == 1) {
                     BDpwd[usrindex] = newpwd;
                     console.log("Password for user: " + BDusr[usrindex] + " changed to: " + BDpwd[usrindex] + '.');
-                } else console.log("User doesn't exist.");
+                    document.getElementById("Message").innerHTML = "Password changed.";
+                } else {
+                    console.log("User doesn't exist.");
+                    document.getElementById("Message").innerHTML = "User doesn't exist.";
+                }
             }
         });
-    } else console.log('Credentials are too short. (4 or more characters required.)');
+    } else {
+        console.log('Credentials are too short. (4 or more characters required.)');
+        document.getElementById("Message").innerHTML = "Credentials are too short. (4 or more characters required.)";
+    }
     console.log('\n\n\n\n');
 }
