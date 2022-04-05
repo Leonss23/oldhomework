@@ -1,0 +1,85 @@
+.panel{
+    background-color: rgba(0, 0, 0, 0.842);
+    height: 70%;
+    width: 35%;
+    font-size: 1em;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.round {
+    border-radius: 25px;
+}
+img{
+    margin: 8% 0  0;
+    padding: 2%;
+    border-radius: 50%;
+    background-color: rgba(163, 163, 163, 0.8);
+    width: 30%;
+}
+input::placeholder{
+    color: rgba(255, 255, 255, 0.568);
+}
+input{
+    display: block;
+    margin: auto auto 2%;
+    height: 6%;
+    width: 50%;
+    font-size: 2em;
+    font-family: monospace;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border:solid;
+    border-width: 3px 3px 3px 3px;
+    border-radius: 50px;
+    border-color: black black rgba(255, 0, 0, 0.493) black;
+    transition: 0.35s ease;
+}
+
+input:hover{
+    border: 3px solid rgb(255, 0, 0);
+    background-color: black;
+}
+input:active{
+    border: 3px solid rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.288);
+}
+input:focus{
+    border: 3px solid rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.452);
+}
+button{
+    margin: 3% auto auto auto;
+    min-height: 65px;
+    height: 10%;
+    width: 25%;
+    color: white;
+    font-size:large;
+    font-weight:bold;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 0, 0, 0.493);
+    background-color: rgb(51, 0, 0);
+    transition: 0.1s;
+}
+button:hover{
+    border: 3px solid rgb(255, 0, 0);
+    background-color: rgba(17, 17, 17, 0.301);
+}
+button:active{
+    border: 3px solid rgb(255, 0, 0);
+    background-color: rgba(34, 34, 34, 0.555);
+}
+p{
+    visibility: hidden;
+    text-decoration:underline;
+    margin: 1%;
+    font-family: sans-serif;
+    font-size: larger;
+}
