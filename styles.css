@@ -1,95 +1,113 @@
-.panel{
+.panel {
     background-color: rgba(0, 0, 0, 0.842);
-    height: 70%;
-    width: 35%;
-    min-height: 340px;
-    min-width: 340px;
-    font-size: 1em;
     font-family: sans-serif;
     font-weight: bold;
     color: white;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
+    padding: 2% 3%;
 }
+
 .round {
     border-radius: 25px;
 }
-img{
-    margin: 5% 0  0;
+
+img {
+    margin: 3vh 0 0;
     padding: 2%;
     border-radius: 50%;
     background-color: rgba(163, 163, 163, 0.8);
-    width: 30%;
+    width: 20vh;
 }
-input::placeholder{
+
+input::placeholder {
     color: rgba(255, 255, 255, 0.568);
 }
-input{
-    display: block;
-    margin: auto auto 2%;
-    height: 6%;
-    width: 50%;
-    font-size: 2em;
+
+input {
+    position: relative;
+    display: inline;
+    margin: 0% 0% 2vh 0%;
+    height: 5vh;
+    min-height: 35px;
+    width: 35vh;
+    min-width: 250px;
     font-family: monospace;
     font-weight: bold;
+    font-size: calc(18px + 0.5vh);
     text-align: center;
     color: white;
     background-color: black;
-    border:solid;
+    border: solid;
     border-width: 3px 3px 3px 3px;
     border-radius: 50px;
     border-color: black black rgba(255, 0, 0, 0.493) black;
     transition: 0.35s ease;
 }
 
-input:hover{
+input:hover {
     border: 3px solid rgb(255, 0, 0);
     background-color: black;
 }
-input:active{
+
+input:active {
     border: 3px solid rgb(255, 0, 0);
     background-color: rgba(255, 0, 0, 0.288);
 }
-input:focus{
+
+input:focus {
     border: 3px solid rgb(255, 0, 0);
     background-color: rgba(255, 0, 0, 0.452);
 }
-button{
-    margin: 2% auto 1% auto;
-    height: 10%;
-    min-height: 40px;
-    width: 25%;
+
+button {
+    position: relative;
+    margin: 2vh 0% 0vh 0%;
+    height: 8vh;
+    min-height: 50px;
+    width: 17.5vh;
+    min-width: 125px;
     color: white;
-    font-size:1em;
-    font-weight:bold;
+    font-weight: bold;
+    font-size: calc(14px + 0.5vh);
     border-radius: 15px;
     border: 2px solid rgba(255, 0, 0, 0.493);
     background-color: rgb(51, 0, 0);
     transition: 0.1s;
     vertical-align: middle;
-    justify-content: space-between;
 }
-button:hover{
+
+.loginbtn {
+    width: 35vh;
+    min-width: 250px;
+}
+
+button:hover {
     border: 3px solid rgb(255, 0, 0);
     background-color: rgba(17, 17, 17, 0.301);
 }
-button:active{
+
+button:active {
     border: 3px solid rgb(255, 0, 0);
     background-color: rgba(34, 34, 34, 0.555);
 }
-p{
+
+.errormsg {
+    min-width: 100px;
     visibility: hidden;
-    text-decoration:underline;
+    text-decoration: underline;
+    font-size: 2vh;
     margin: 1%;
     font-family: sans-serif;
-    font-size: larger;
 }
-.hidden{
+
+.hidden {
     visibility: hidden;
 }
-.shown{
+
+.shown {
     visibility: visible;
 }

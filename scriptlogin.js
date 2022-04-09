@@ -9,23 +9,24 @@ function login() {
         let usrexists = 0;
         let pwdcorrect = 0;
         let count = 0;
-        BDusr.forEach(function (v, i, a) {
+        let usrindex;
+        BDusr.forEach(function (v, i) {
             count++;
             if (usr == v) {
                 console.log('User Index= ' + i)
                 usrexists = 1;
-                if (pwd == BDpwd[i]) {
-                    pwdcorrect = 1;
-                }
+                usrindex = i;
             }
             if (count == BDusr.length) {
                 console.log('User exists: ' + usrexists + ' Password correct: ' + pwdcorrect);
                 if (usrexists == 1) {
                     console.log('User exists');
-                    if (pwdcorrect == 1) {
+                    if (pwd == BDpwd[usrindex]) {
                         console.log('Password correct\nLogged in.');
                         document.getElementById("Message").innerHTML = "Logged in.";
                         document.getElementById("Message").classList.add('shown');
+                        localStorage.setItem('User', BDusr[usrindex]);
+                        location.assign('navigation.html');
                     } else {
                         console.log('Password incorrect');
                         document.getElementById("Message").innerHTML = "Credentials are incorrect.";
@@ -52,7 +53,7 @@ function addUser() {
     if (newusr.length > 3 && newpwd.length > 3) {
         let newusrexists = 0;
         let count = 0
-        BDusr.forEach(function (v, i, a) {
+        BDusr.forEach(function (v, i) {
             count++;
             if (newusr == v) {
                 newusrexists = 1;
@@ -80,26 +81,39 @@ function addUser() {
 
 function resetPwd() {
     let usr = document.getElementById('USRin').value;
-    let newpwd = document.getElementById('PWDin').value;
-    if (usr.length > 3 && newpwd.length > 3) {
+    let pwd = document.getElementById('PWDin').value;
+    if (usr.length > 3 && pwd.length > 3) {
         let count = 0;
         let usrexists = 0;
+        let pwdconfirm;
         let usrindex;
-        BDusr.forEach(function (v, i, a) {
+        let newpwd;
+        BDusr.forEach(function (v, i) {
             count++;
             if (usr == v) {
                 usrexists = 1;
-                usrindex = i;
+                if (BDpwd[i] == pwd) {
+                    pwdconfirm = 1;
+                    usrindex = i;
+                }
             }
             if (count == BDusr.length) {
                 if (usrexists == 1) {
-                    BDpwd[usrindex] = newpwd;
-                    console.log("Password for user: " + BDusr[usrindex] + " changed to: " + BDpwd[usrindex] + '.');
-                    document.getElementById("Message").innerHTML = "Password changed.";
-                    document.getElementById("Message").classList.add('shown');
+                    if (pwdconfirm == 1) {
+                        newpwd = prompt("New Password: ");
+                        console.log('newpwd= "' + newpwd + '"');
+                        while (newpwd.length < 4 && newpwd == null) {
+                            newpwd = prompt("New Password (4 or more characters required): ");
+                            console.log('newpwd= "' + newpwd + '"');
+                        }
+                        BDpwd[usrindex] = newpwd;
+                        console.log("Password for user: " + BDusr[usrindex] + " changed to: " + BDpwd[usrindex] + '.');
+                        document.getElementById("Message").innerHTML = "Password changed.";
+                        document.getElementById("Message").classList.add('shown');
+                    }
                 } else {
                     console.log("User doesn't exist.");
-                    document.getElementById("Message").innerHTML = "User doesn't exist.";
+                    document.getElementById("Message").innerHTML = "Credentials are incorrect";
                     document.getElementById("Message").classList.add('shown');
                 }
             }

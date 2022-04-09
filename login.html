@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>loginscript</title>
+    <title>Login</title>
     <script src="scriptlogin.js"></script>
-    
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body style="background: linear-gradient(to left top,black,rgb(90, 0, 0));">
-    <div class="panel round">
+    <div class="panel round" style="min-height: 350px; max-height: 100vh; min-width: 35vh; min-width: 250px;">
         <img src="usericon.png" alt="usericon.png">
-        <p id="Message" >X</p>
-        <input id="USRin" type="text" placeholder="Username"  maxlength="25">
-        <input id="PWDin" type="password" placeholder="Password" maxlength="25">
-        <button onclick="login()" style="width: 51%; font-size:2em;" >Log In</button> </br>
-        <button onclick="addUser()" >Add User</button>
-        <button onclick="resetPwd()" >Reset </br> Password</button>
+        <p id="Message" class="errormsg">X</p>
+        <input id="USRin" type="text" placeholder="Username" maxlength="15"></br>
+        <input id="PWDin" type="password" placeholder="Password" maxlength="15"></br>
+        <button onclick="login()" class="loginbtn">Log In</button> </br>
+        <button onclick="addUser()">Add User</button>
+        <button onclick="resetPwd()">Reset </br> Password</button>
     </div>
 </body>
+
 </html>
