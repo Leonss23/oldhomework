@@ -1,0 +1,323 @@
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: monospace;
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(180deg, red, black);
+    overflow-x: hidden;
+}
+
+div {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+::-webkit-scrollbar {
+    max-width: 10px;
+}
+
+
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 0, 0, 0.582);
+    border-radius: 20px;
+}
+
+.panel {
+    background-color: rgba(0, 0, 0, 0.90);
+}
+
+
+.container {
+    height: 80%;
+    width: 80%;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.round {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.ctlgpanel {
+    position: relative;
+    width: 80%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.15);
+    overflow-y: scroll;
+    display: block;
+    min-height: 100%;
+}
+
+
+#infopanel {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 20%;
+    height: 100%;
+    background-color: rgba(58, 58, 58, 0.356);
+    display: inline-block;
+}
+
+
+#addcrtbtn {
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+    aspect-ratio: 8/3;
+    background-color: rgb(255, 255, 255);
+    border-color: red;
+    border-width: 0.7vh;
+    font-family: monospace;
+    font-size: calc(11px + 1.0vw);
+}
+
+.infop {
+    margin: 30px 0 0 5px;
+    font-size: calc(12px + 0.7vw);
+    text-align: left;
+    font-weight: bolder;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin: 0px;
+    font-size: calc(15px + 1.5vw);
+    color: white;
+    text-shadow: -3px -3px 0 black, 3px -3px 0px black, -3px 3px 0 black, 3px 3px 0 black;
+    text-decoration: underline;
+}
+
+.primg {
+    display: inline-block;
+    margin: 2%;
+    border-radius: 25px;
+    aspect-ratio: 1/1;
+    width: 12.6%;
+    cursor: pointer;
+    background-color: white;
+    align-items: baseline;
+    vertical-align: baseline;
+    min-width: 100px;
+    background-position: center;
+    max-width: 150px;
+}
+
+
+.qtyctr {
+    position: relative;
+    font-size: calc(12px + 1vw);
+    font-weight: bolder;
+    background-color: orangered;
+    border-radius: 100%;
+    width: calc(6px + 25%);
+    aspect-ratio: 1/1;
+    text-align: center;
+    line-height: calc(20px + 2.2vh);
+    visibility: hidden;
+    transform: translate(230%, 230%);
+    margin: 0px 0px 0px 0px;
+    overflow: hidden;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.shown {
+    visibility: visible !important;
+    display: inline-block;
+}
+
+.menupnl {
+    position: static;
+    top: 0vh;
+    display: block;
+    height: 2vh;
+    line-height: 1.15;
+    padding: 1% 4%;
+    background-color: black;
+    text-align: center;
+}
+
+.menu_a {
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: calc(15px + 0.5vw);
+    text-decoration: none;
+    color: white;
+    margin: 0px 0.06vw;
+    cursor: pointer;
+}
+
+#container2 {
+    overflow-y: scroll;
+}
+
+.listpr {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    display: inline-block;
+    max-height: 13vh;
+    border-color: rgb(0, 0, 0);
+    border-top: 10px;
+    border-width: 10px;
+    overflow: hidden;
+    height: auto;
+}
+
+.listimg,
+.listtxt,
+.listnum {
+    display: inline-block;
+    position: relative;
+    height: 10vh;
+    font-family: monospace;
+    font-size: calc(15px);
+    font-weight: bold;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.listimg {
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    background-position: center;
+}
+
+.listnum {
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+    aspect-ratio: 2/3;
+    background-color: transparent;
+    border: 0px;
+    font-family: monospace;
+    font-size: calc(10px + 1.5vh);
+    font-weight: bolder;
+    outline: none;
+}
+
+.listtxt {
+    position: relative;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    aspect-ratio: auto;
+    margin: 1% 0 0 2%;
+    overflow: auto;
+}
+
+.listdel {
+    line-height: 6rem;
+    margin-right: 1%;
+    font-family: monospace;
+    font-size: calc(40px + 1vw);
+    cursor: pointer;
+    float: right;
+    vertical-align: middle;
+    margin: 0%;
+}
+
+#ttlprc {
+    top: 0%;
+    margin: 0.5%;
+    color: white;
+    font-size: calc(20px);
+}
+
+@media (orientation:portrait) {
+    .container {
+        height: 95%;
+        width: 100%;
+    }
+
+    ::-webkit-scrollbar {
+        max-width: 0px;
+    }
+
+
+    .center {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: translateY(-1px);
+    }
+
+    .round {
+        border-radius: 0px;
+        overflow: hidden;
+    }
+
+    .menupnl {
+        position: relative;
+        background-color: black;
+        display: block;
+        text-align: center;
+        padding: 1% 4%;
+        overflow: hidden;
+    }
+
+
+    .primg {
+        width: 29%;
+    }
+
+    .ctlgpanel {
+        width: 100%;
+        height: 50%;
+        overflow: scroll;
+        min-height: 92%;
+    }
+
+    #infopanel {
+        display: inline-block;
+        position: fixed;
+        background-color: rgb(36, 36, 36);
+        width: 100%;
+        height: auto;
+        bottom: 0vh;
+        top: auto;
+        right: auto;
+        min-width: 150px;
+    }
+
+    .infop {
+        margin: 1%;
+    }
+    #addcrtbtn {
+        position: relative;
+        float: right;
+        width: min-content;
+        left: auto;
+        transform: translateX(0%);
+        bottom: auto;
+        aspect-ratio: auto;
+        margin: 2%;
+        background-color: rgb(255, 255, 255);
+        border-color: red;
+        border-width: 0.5vh;
+        font-family: monospace;
+        font-size: calc(11px + 1.0vw);
+        display: none;
+    }
+}

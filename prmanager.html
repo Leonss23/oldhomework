@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Manager</title>
+    <style>
+        input,
+        button {
+            margin: 1% 100% 1% 1%;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="menu_a" href="file:catalog.html">|Catalog|</a>
+    <a class="menu_a" href="file:cart.html">|Cart|</a>
+    <fieldset>
+        <legend>Product Management</legend>
+        <input id="inpName" type="text" placeholder="Name" value="ExampleName">
+        <input id="inpModel" type="text" placeholder="Model" value="ExampleModel">
+        <input id="inpPrice" type="text" placeholder="Price" value="420">
+        <input id="inpImgurl" type="text" placeholder="ImgURL" value="420.gif">
+        <button id="addprbtn">Add Product</button>
+    </fieldset>
+    <script>
+        let addprbtn = document.getElementById('addprbtn');
+        let inpName = document.getElementById('inpName');
+        let inpPrice = document.getElementById('inpPrice');
+        let inpImgurl = document.getElementById('inpImgurl');
+        let inpModel = document.getElementById('inpModel');
+
+        addprbtn.onclick = addpr;
+        function addpr() {
+            if (inpName.value && inpPrice.value && inpImgurl.value && inpModel.value) {
+                let newid = 0;
+                while (localStorage.getItem('pr_name' + newid)) {
+                    newid++;
+                }
+                localStorage.setItem('pr_name' + newid, inpName.value);
+                localStorage.setItem('pr_price' + newid, inpPrice.value);
+                localStorage.setItem('pr_imgurl' + newid, inpImgurl.value);
+                localStorage.setItem('pr_model' + newid, inpModel.value);
+                localStorage.setItem('pr_qty' + newid, '0');
+                location.reload();
+            }
+        }
+    </script>
+</body>
+
+</html>
